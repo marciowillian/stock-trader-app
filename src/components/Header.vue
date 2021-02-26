@@ -14,13 +14,18 @@
       <v-spacer></v-spacer>
 
       <v-toolbar-items>
-        <v-btn flat>Finalizar Dia</v-btn>
+        <v-btn flat>Finalizar o Dia</v-btn>
         <v-menu offset-y>
-          <v-btn flat slot="activator">Salvar & Carregar</v-btn>
+          <template v-slot:activator="{ on, attrs }">
+            <v-btn flat v-bind="attrs" v-on="on"> Salvar & Carregar </v-btn>
+          </template>
           <v-list>
-            <v-list-tile>
-              <v-list-tile-title>Salvar Dados</v-list-tile-title>
-            </v-list-tile>
+            <v-list-item>
+              <v-list-item-title>Salvar Dados</v-list-item-title>
+            </v-list-item>
+            <v-list-item>
+              <v-list-item-title>Carregar Dados</v-list-item-title>
+            </v-list-item>
           </v-list>
         </v-menu>
       </v-toolbar-items>
