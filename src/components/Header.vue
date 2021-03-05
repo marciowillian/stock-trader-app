@@ -29,12 +29,23 @@
           </v-list>
         </v-menu>
       </v-app-bar-items>
+        <v-layout align-center>
+          <span class="text-uppercase grey--text text--darken-2">
+            Saldo: {{ funds }}
+          </span>
+        </v-layout>
     </v-app-bar>
   </v-card>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    funds(){
+      return this.$store.getters.funds
+    }
+  }
+};
 </script>
 
 <style>
